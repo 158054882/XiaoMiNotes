@@ -71,9 +71,51 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+//监听 NoteEditText 的文本变化，并更新字数统计的 TextView
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import net.micode.notes.ui.NoteEditText;
 
-public class NoteEditActivity extends Activity implements OnClickListener,
-        NoteSettingChangedListener, OnTextViewChangeListener {
+public class NoteEditActivity extends AppCompatActivity {
+    
+    private NoteEditText noteEditView;
+    private TextView tvWordCount;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_note_edit);
+
+        noteEditView = findViewById(R.id.note_edit_view);
+        tvWordCount = findViewById(R.id.tv_word_count);
+
+        noteEditView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateWordCount(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    private void updateWordCount(String text) {
+        // 按空格分隔，计算字数
+        String[] words = text.trim().split("\\s+");
+        int wordCount = (text.trim().isEmpty()) ? 0 : words.length;//当输入文本为空或仅包含空格时，字数将被设置为0。
+        tvWordCount.setText("字数: " + wordCount);
+    }
+}
+
+public class NoteEditActivity extends Activity implements OnClickListener,NoteSettingChangedListener, OnTextViewChangeListener {
+    
     private class HeadViewHolder {
         public TextView tvModified;
 
