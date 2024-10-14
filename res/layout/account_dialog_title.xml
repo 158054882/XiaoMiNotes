@@ -46,7 +46,7 @@
         android:id="@+id/account_dialog_subsubtitle"//分配ID
         android:layout_width="fill_parent"//宽度
         android:layout_height="wrap_content"//高度
-        android:layout_marginTop="5dip"//顶部距离
+        android:layout_marginTop="3dip"//顶部距离
         android:layout_marginBottom="1dip"//底部距离
         android:gravity="center"/>//文本内容居中
 
