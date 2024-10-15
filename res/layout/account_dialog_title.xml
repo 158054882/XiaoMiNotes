@@ -21,7 +21,7 @@
         android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- 主标题 -->
+    <-- 主标题 -->
     <TextView
         android:id="@+id/account_dialog_title"
         style="?android:attr/textAppearanceMedium"
@@ -33,7 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
-    <!-- 副标题 -->
+    <-- 副标题 -->
     <TextView
         android:id="@+id/account_dialog_subtitle"
         android:layout_width="fill_parent"
@@ -41,7 +41,7 @@
         android:layout_marginTop="5dip"
         android:layout_marginBottom="1dip"
         android:gravity="center"/>
-    <!-- 增加功能：三级标题 -->
+    <-- 增加功能：三级标题 -->
     <TextView
         android:id="@+id/account_dialog_subsubtitle"//分配ID
         android:layout_width="fill_parent"//宽度
