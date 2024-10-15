@@ -99,7 +99,7 @@
                         android:textAppearance="@style/TextAppearancePrimaryItem"
                         android:lineSpacingMultiplier="1.2" />
 
-                    <-- 增加功能 字数统计  -->
+                    <-- 增加功能：字数统计  -->
                     <TextView
                         android:id="@+id/tv_word_count"
                         android:layout_width="wrap_content"
