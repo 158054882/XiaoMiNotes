@@ -41,7 +41,7 @@
         android:layout_marginTop="5dip"
         android:layout_marginBottom="1dip"
         android:gravity="center"/>
-     <!-- 增加功能：三级标题 -->
+    <!-- 增加功能：三级标题 -->
     <TextView
         android:id="@+id/account_dialog_subsubtitle"//分配ID
         android:layout_width="fill_parent"//宽度
